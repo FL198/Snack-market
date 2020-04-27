@@ -1,0 +1,77 @@
+.content{
+  width: 100%;
+}
+.content .title{
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: '宋体';
+  line-height: 100px;
+}
+.content .photo{
+  margin-right: 50px;
+  width: 35%;
+}
+.content .photo img{
+  border-radius: 10px;
+  width: 80%;
+}
+.content .desc{
+  width: 59%;
+}
+.content .desc p{
+  font-weight: bold;
+  line-height: 40px;
+  font-size: 20px;
+}
+.content .desc h1{
+  font-style: normal;
+  font-size: 24px;
+  height: 40px;
+  color: #000;
+}
+.content .desc .name{
+  color: brown;
+  display: inline-block;
+  font-size: 20px;
+  width: 500px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 50px;
+}
+.desc .box input.oper{
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  width: 5%;
+}
+.desc .box input.number{
+  text-align: center;
+  width: 50px;
+}
+.content .desc .num{
+  color: #000;
+}
+.desc .buy{
+  margin-top: 20px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 30px;
+  background-color:royalblue;
+  border-radius: 20px;
+}
+.desc .buy:hover{
+  background-color:brown;
+  transition: all .6s;
+}
+.desc .bottom{
+  width: 400px;
+}
+.desc .bottom .total{
+  line-height: 70px;
+  font-size: 24px;
+}
+.bottom .total{
+  color: blue;
+}

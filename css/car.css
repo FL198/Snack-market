@@ -1,0 +1,73 @@
+.nav{
+  border-radius: 25px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 5px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background-color:teal;
+  text-align: center;
+  font-size: 14px;
+}
+.nav a{
+  color: black;
+}
+.car_display{
+  text-align: center;
+}
+.car_display h1{
+  font-size: 50px;
+  line-height: 100px;
+}
+table{
+  width: 100%;
+}
+input.oper{
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  width: 20px;
+}
+input.number{
+  text-align: center;
+  width: 40px;
+}
+table td.title{
+  width: 150px;
+}
+.table_nav{
+    margin-bottom: 20px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+}
+.pay{
+    font-size: 24px;
+    color: red;
+    margin-right: 20px;
+}
+.end{
+  margin-top: 10px;
+}
+.del{
+    cursor: pointer;
+    border: none;
+    padding:5px 10px ;
+    background-color: pink;
+}
+.del:hover{
+    background-color:red;
+}
+.all-del{
+  cursor: pointer;
+  margin: 10px 0;
+  padding: 5px 10px;
+  background-color: orchid;
+  display: inline-block;
+  display: none;
+}
+.all-del:hover{
+    background: red;
+}

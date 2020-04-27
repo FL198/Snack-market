@@ -1,0 +1,85 @@
+.food{
+    text-align: center;
+}
+.title{
+    margin-top: 50px;
+    font-size: 40px;
+}
+.title i{
+    margin: 0 20px;
+    color:darkred;
+}
+.title:hover{
+    color: #7b133a;
+}
+.content{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.content a{
+    margin: 30px auto;
+    text-align: left;
+    padding: 20px;
+    width: 220px;
+    display: inline-block;
+    box-shadow: 0px 0px 20px 5px #ccc;
+}
+.content img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.content .desc .name{
+    color: #000;
+    font-size: 14px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.desc .box{
+    margin-top:10px ;
+    border-radius: 10px;
+    display: inline-block;
+    color: #fff;
+    background-color: hotpink;
+}
+.desc .box i{
+    margin: 0 3px;
+    color:slateblue;
+}
+.desc .cause{
+    color: #666;
+    padding-left: 5px;
+    font-size: 14px;
+}
+.desc .time{
+    font-size: 14px;
+    margin-top: 10px;
+}
+.content a:hover .name{
+    color: red;
+}
+.content a:hover{
+    transition: all .6s;
+    transform: translateY(-30px);
+}
+.nav{
+    border-radius: 25px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background-color:teal;
+    text-align: center;
+    font-size: 14px;
+  }
+  .nav a{
+    color: black;
+  }
+ 

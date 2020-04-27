@@ -1,0 +1,54 @@
+.head{
+    width: 100%;
+    background-color: #ccc;
+    line-height: 40px;
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 25px;
+}
+.head a{
+    margin: 0 10px;
+}
+.head a:hover{
+    color: cadetblue;
+}
+.head .car{
+    padding-right: 5px;
+}
+.head .fresh-car{
+    padding-right: 5px;
+}
+.head .cart-see_buy{
+    padding-right: 5px;
+}
+.menu img{
+    margin-right: 80px;
+    vertical-align: middle;
+}
+.menu a{
+    display: inline-block;
+    padding: 0 15px;
+    height: 40px;
+    line-height: 40px;
+}
+.menu a:hover{
+    color: yellowgreen;
+}
+.menu input{
+    width: 200px;
+    margin:0 5px 0 50px;
+    line-height: 28px;
+}
+.menu .search_icon{
+    vertical-align: middle;
+    color: firebrick;
+    cursor: pointer;
+    font-size: 30px;
+    /*border:1px solid #ccc;*/
+}
+.visited{
+    color: royalblue;
+}
+a.visited:hover{
+    color:royalblue;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>用户登录</title>
+    <link rel="stylesheet" href="../css/head.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+    <!--头部导航栏-->
+    <div class="head">
+        <div class="container clear">
+            <div class="left">欢迎来到小食之家</div>
+            <div class="right">
+                <a href="login.html">登录</a>|
+                <a href="register.html">注册</a>
+                <a href="shopping-car.html" class="car"><i class="car fa fa-shopping-cart" aria-hidden="true"></i>购物车</a>
+            </div>
+        </div>
+    </div>
+    <!--菜单栏-->
+    <div class="menu container">
+        <img src="../images/homePage/logo.png" width="100">
+        <a href="javascript:">首页</a>
+        <a href="popular.html">热销商品</a>
+        <a href="fresh.html">新品尝鲜</a>
+        <a href="cheap.html">特价商品</a>
+        <a href="discount.html">返优惠券</a>
+        <input type="text" placeholder="请输入您想要的食品" autofocus><i class="search_icon fa fa-search" aria-hidden="true"></i>
+    </div>
+    <div class="user_login">
+        <p class="title">用户登录中心</p>
+        <div class="login">
+            <p class='tip'>用户名或密码不能为空！</p>   
+            <form action="" method="post">
+                <label>用户名</label><br>
+                <input type="text" name="username" autofocus class='username'><br>
+                <label>密码</label><br>
+                <input type="password" name="psw" class='password'>
+                <div class="forget clear">
+                    <a href="register.html" class="left">还没账号？点击注册</a>
+                    <input type="submit" value="登录" id="login">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../plugin/jquery-1.12.4.min.js"></script>
+    <script src='../js/login.js'></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+.name{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+.name span{
+  background-color: yellowgreen;
+  border-radius: 50%;
+  padding: 20px;
+  display: inline-block;
+  font-size: 60px;
+  margin: 30px;
+}
+.name span:hover{
+  background-color: green;
+  transform: translateY(-50px) rotate(-360deg);
+  transition: all 1s;
+}
+.content{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.content a{
+  width: 200px;
+  display: inline-block;
+  margin: 30px;
+}
+.content a img{
+  border-radius: 20%;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.content a img:hover{
+  opacity: .9;
+}
+.desc .title{
+  line-height: 24px;
+  color: #333;
+  font-size: 15px;
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  margin-bottom: 7px;
+}
+.desc .title:hover{
+  text-decoration: underline;
+  color: red;
+}
+.desc .price{
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+.desc .comment{
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.desc .comment span{
+  font-weight: bold;
+  color:darkblue;
+}
+.desc .shop{
+  color: peru;
+  font-size: 14px;
+}
+.nav{
+  border-radius: 25px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 5px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background-color:teal;
+  text-align: center;
+  font-size: 14px;
+}
+.nav a{
+  color: black;
+}

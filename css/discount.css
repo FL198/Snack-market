@@ -1,0 +1,107 @@
+.discount{
+    text-align: center;
+}
+.discount .banner{
+    margin: 50px 0;
+}
+.banner img{
+    vertical-align: top;
+    margin-right: 20px;
+}
+.banner p{
+    border-radius: 15px;
+    padding-left: 90px;
+    text-align: center;
+    line-height: 120px;
+    letter-spacing: 2em;
+    background-image: linear-gradient(yellowgreen,skyblue);
+    font-size:50px;
+    display: inline-block;
+}
+.banner p:hover{
+    transition: all .6s;
+    background-image: linear-gradient(red,pink);
+}
+.content a{
+    display: inline-block;
+    width: 220px;
+    height: 320px;
+    text-align: left;
+    padding: 20px;
+    border:2px solid #ccc;
+    margin: 20px auto;
+}
+.content a img{
+    width: 100%;
+}
+.content .state{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: crimson;
+}
+.content{
+    text-align: left;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.desc .title{
+    font-size: 14px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.desc .active{
+    color: green;
+}
+.desc .active span{
+    display: inline-block;
+    border-radius: 15px;
+    padding: 3px 10px;
+}
+.desc .get{
+    color: #fff;
+    background-color: #3F9D00;
+}
+.desc .back {
+    border:1px dotted green;
+}
+.desc .price{
+    font-size: 28px;
+    color: red;
+    font-weight: bold;
+}
+.desc .box del,.box span{
+    font-style: normal;
+    color: #ccc;
+    font-size: 14px;
+}
+.content a:hover{
+    background-color: #eee;
+}
+.content a:hover .home{
+    display: block;
+}
+.desc .home{
+    display: none;
+    color: blueviolet;
+    padding: 10px;
+}
+.nav{
+    border-radius: 25px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background-color:teal;
+    text-align: center;
+    font-size: 14px;
+  }
+  .nav a{
+    color: black;
+  }

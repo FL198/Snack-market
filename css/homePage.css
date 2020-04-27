@@ -1,0 +1,284 @@
+.banner{
+  position: relative;
+}
+.banner ul{
+  height: 360px;
+  overflow: hidden;
+}
+.banner ul li {
+  width: 100%;
+  height: 100%;
+}
+.banner img{
+  width: 100%;
+  height: 100%;
+}
+.banner .circle span{
+  cursor: pointer;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 5px;
+}
+.banner .circle{
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  margin-left: -50px;
+}
+.banner .circle .active{
+  background-color: #fff;
+}
+.banner:hover .btn{
+  display: block;
+}
+.banner .btn{
+  cursor: pointer;
+  position: absolute;
+  top:50%;
+  font-size: 36px;
+  color: rosybrown;
+  display: none;
+}
+.banner .btn_left{
+  left: 240px;
+}
+.banner .btn_right{
+  right: 0;
+}
+.banner .category{
+  height: 100%;
+  width: 200px;
+  background-color: rgba(0,0,0,.3);
+  position: absolute;
+  top:0;
+  left: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 20px 0;
+}
+.category .title{
+  text-align: center;
+  display: block;
+  width: 100%;
+  line-height: 40px;
+  color: #fff;
+}
+.category .title:hover{
+  transition: all .7s;
+  background-color: darkolivegreen;
+}
+.category .box{
+  width: 200px;
+  height: 100%;
+  position: absolute;
+  left: 200px;
+  top: 0;
+  background-color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  display: none;
+}
+.category .box a{
+  margin-bottom: 20px;
+  display: block;
+}
+.category .box img{
+  vertical-align: middle;
+  border-radius: 50%;
+  width: 40px;
+  margin-right: 15px;
+}
+.banner .box a:hover{
+  color: coral;
+}
+.display{
+  margin-top: 40px;
+}
+.display p{
+  font-weight: bold;
+  color: #666;
+  font-size: 28px;
+}
+.display .title{
+  line-height: 80px;
+}
+.hot_pro .right span{
+  font-size: 18px;
+  color: darkred;
+}
+.hot_pro .time{
+  display: inline-block;
+}
+.hot_pro .time span{
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  line-height: 20px;
+  background-color: rosybrown;
+  border-radius: 25%;
+  display: inline-block;
+  margin: 0 10px;
+}
+.display{
+  display: flex;
+}
+.display a{
+  flex: 1;
+  width: 200px;
+  margin: 5px 0;
+  display: inline-block;
+  padding: 13px;
+  margin: 5px;
+  border:1px solid #ccc;
+}
+.display a:hover{
+  opacity: .9;
+  transition: all .6s;
+}
+.display img{
+  width: 100%;
+  border-radius: 50%;
+}
+.display .desc p{
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+.display .desc p{
+  font-size: 18px;
+  padding: 5px 0;
+}
+.display .desc .price{
+  color: darkred;
+}
+.display .desc .user_buy{
+  margin-top: 10px;
+}
+.display .desc .buy{
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  padding: 5px;
+  color: #fff;
+  background-color: rgba(0,0,0,.4);
+}
+.display .desc .buy:hover{
+  background-color: darkslategray;
+}
+.display .desc .car{
+  color: #333;
+  margin: 0 10px;
+}
+.fresh_pro .banner{
+  text-align: center;
+  width: 100%;
+}
+.fresh_pro .banner img{
+  width: 400px;
+}
+.fresh_pro .pro a,.cheap_pro .pro a{
+  height: 360px;
+  border: none;
+}
+.cheap_pro .ori_price{
+  text-decoration: line-through;
+}
+.discount_pro .pro img{
+  width: 100%;
+  border-radius: 0;
+  margin-bottom: 10px;
+}
+.discount_pro .desc .title{
+  margin-top: 10px;
+  display: inline-block;
+  width: 200px;
+  font-size: 14px;
+  color: #666;
+  line-height: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.discount_pro .desc .title:hover{
+  color: red;
+  text-decoration: underline;
+}
+.discount_pro .number span{
+  font-size: 14px;
+  color: saddlebrown;
+}
+.discount_pro .number .dis_box{
+  margin-left: 61px;
+  background-color: coral;
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+.discount_pro .pro p{
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  color: red;
+}
+.discount_pro .pro .del{
+  color: #666;
+  text-decoration: line-through;
+}
+.discount_pro .pro i{
+  cursor: pointer;
+  color: #666;
+  font-size: 16px;
+}
+.discount_pro a:hover{
+  opacity: .9;
+}
+.discount_pro .hand:hover{
+  color: darkred;
+}
+.display .discount_pro .pro a{
+  display: inline-block;
+  width: 198px;
+  margin: 5px auto;
+}
+.footer{
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+.footer .recommend{
+  color: blue;
+  text-align: center;
+  margin: 0 10px;
+  line-height: 80px;
+  font-size: 20px;
+  width: 200px;
+  flex: 1;
+  background-color: rgba(0,0,0,.2);
+  opacity: .8;
+}
+.footer .recommend:hover{
+  color: red;
+}
+.footer .recommend i{
+  margin-right: 10px;
+}
+.nav{
+  border-radius: 25px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 5px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background-color:teal;
+  text-align: center;
+  font-size: 14px;
+}
+.nav a{
+  color: black;
+}

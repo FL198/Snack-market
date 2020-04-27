@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/head.css">
+  <link rel="stylesheet" href="../css/foot.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../plugin/css/pagination.css">
+  <link rel="stylesheet" href="../css/car.css?v=20200108">
+  <link rel="stylesheet" href="../plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+  <title>我的购物车</title>
+</head>
+<body>
+<!--头部导航栏-->
+<div class="head">
+  <div class="container clear">
+      <div class="left">欢迎<span class="welcome_name"></span>来到小食之家</div>
+      <div class="right">
+          <a href="login.html">登录</a>|
+          <a href="register.html">注册</a>
+          <a href="shopping-car.html" class="car"><i class="car fa fa-shopping-cart" aria-hidden="true"></i>购物车</a>
+      </div>
+  </div>
+</div>
+<!--菜单栏-->
+<div class="menu container">
+  <img src="../images/homePage/logo.png" width="100">
+  <a href="homePage.html" name='main'>首页</a>
+  <a href="popular.html">热销商品</a>
+  <a href="fresh.html">新品尝鲜</a>
+  <a href="cheap.html">特价商品</a>
+  <a href="discount.html">返优惠券</a>
+  <input type="text" placeholder="请输入您想要的食品" autofocus><i class="search_icon fa fa-search" aria-hidden="true"></i>
+</div>
+<!-- 内容 -->
+<div class="container car_display">
+  <h1>购物车展示</h1>
+  <div class="container"><div class="all-del left">全部删除</div></div>
+  <div class="table_nav">
+      <div class="box"><input type="checkbox" class="choose-all"></div>
+      <div class="box">商品</div>
+      <div class="box">名称</div>
+      <div class="box">价格</div>
+      <div class="box">浏览</div>
+      <div class="box">数量</div>
+      <div class="box">总价</div>
+      <div class="box">操作</div>
+  </div>
+  <table class="content"></table>
+</div>
+<div class="container end">
+    <div id="pagination" class="right"></div>
+    <div class="pay right">一共需支付：<span class="to-price"></span>元</div>
+</div>
+<!-- 网页底部 -->
+<div class="foot container">
+  <div class="flex1 title">
+      <p>感谢您来到小食店铺</p>
+      <p>今日有收获吗~~~</p>
+  </div>
+  <div class="flex1">
+      <p class="phone">000-000-000</p>
+      <p>
+          周一至周日9:00-21:00
+          xx市xxx地区 营销部<br>
+          联系电话：xxxxxxxxxxx <br>
+          Copyright©2020 www.fanlin.com
+      </p>
+  </div>
+</div> 
+<div class="nav"><a href="#main">顶部</a></div>
+<script src="../plugin/jquery-1.12.4.min.js"></script>
+<script src="../plugin/js/jquery.pagination.js"></script>
+<script src="../plugin/js/template-web.js"></script>
+<script type="text/html" id="tmp-info">
+    {{each list v i}}
+      <tr>
+        <td><input type="checkbox" class='check-list check-list{{i}}' id={{v.id}}></td>
+        <td><img src="{{v.src}}" width="100"></td>
+        <td class="title">{{v.name}}</td>
+        <td><span class="price{{i}}">{{v.price}}</span>元</td>
+        <td>{{v.see}}</td>
+        <td>
+            <input type="button" class="sub oper" value="-" index={{i}} id={{v.id}}><input type="text" class="number number{{i}} oper" value="{{v.number}}" index={{i}} id={{v.id}}><input type="button" class="add oper" value="+" index={{i}} id={{v.id}}>
+        </td>
+        <td class="total{{i}}"><span>{{v.price}}</span>元</td>
+        <td><input type="button" value="删除" class="del" id={{v.id}}></td>
+      </tr>
+    {{/each}}
+</script>
+<script>
+    var user_pay=0
+    var page=0,pageSize=4
+    function changePage(page,pageSize){
+      $.ajax({
+          url:'../api/api-car/getInfoList.php',
+          data:{page,pageSize},
+          dataType:'json',
+          success:function(info){
+              var htmlStr=template('tmp-info',{list:info})
+              $('.content').html(htmlStr)
+              $.ajax({
+                    url:'../api/api-car/totalPrice.php',
+                    dataType:'json',
+                    success:function(info){
+                        $('.to-price').html(info)
+                    }
+              })
+              $('.choose-all').prop('checked',false)
+              $('.all-del').fadeOut()
+              var index,price,total
+              $('.sub').click(function(){
+                    index=$(this).attr('index')
+                    var num=$('.number'+index).val()
+                    --num
+                    if(num<0)num=0
+                    $('.number'+index).val(num)
+                    price=$('.price'+index).text()
+                    total=num*price
+                    $('.total'+index+' span').html(total)
+                    var id=$(this).attr('id')
+                    $.ajax({
+                        url:'../api/api-car/sendNum.php',
+                        data:{id,num}
+                    })
+                    $.ajax({
+                        url:'../api/api-car/totalPrice.php',
+                        dataType:'json',
+                        success:function(info){
+                        $('.to-price').html(info)
+                      }
+                    })
+              })
+              $('.add').click(function(){
+                    index=$(this).attr('index')
+                    var num=$('.number'+index).val()
+                    ++num
+                    if(num<0)num=0
+                    $('.number'+index).val(num)
+                    price=$('.price'+index).text()
+                    total=num*price
+                    $('.total'+index+' span').html(total)
+                    var id=$(this).attr('id')
+                    $.ajax({
+                        url:'../api/api-car/sendNum.php',
+                        data:{id,num}
+                    })
+                    $.ajax({
+                        url:'../api/api-car/totalPrice.php',
+                        dataType:'json',
+                        success:function(info){
+                        $('.to-price').html(info)
+                      }
+                    })
+              })
+              $('.number').on('input',function(){
+                    index=$(this).attr('index')
+                    var num=$('.number'+index).val()
+                    if(num<0)num=0
+                    price=$('.price'+index).text()
+                    total=num*price
+                    $('.total'+index+' span').html(total)
+                    var id=$(this).attr('id')
+                    $.ajax({
+                        url:'../api/api-car/sendNum.php',
+                        data:{id,num}
+                    })
+                    $.ajax({
+                        url:'../api/api-car/totalPrice.php',
+                        dataType:'json',
+                        success:function(info){
+                        $('.to-price').html(info)
+                    }
+                  })
+              })
+              $('.del').click(function(){
+                  id=$(this).attr('id')
+                  $.ajax({
+                      url:'../api/api-car/delInfo.php',
+                      data:{id},
+                      success:function(){
+                      $.ajax({
+                          url:'../api/api-car/totalPrice.php',
+                          dataType:'json',
+                          success:function(info){
+                          $('.to-price').html(info)
+                        }
+                      })
+                    }
+                  })
+                  render()
+              })
+              var chooseList=[]
+              $('.choose-all').click(function(){
+                  if($(this).prop('checked')==true){
+                      $('.all-del').fadeIn()
+                      $('.check-list').prop('checked',true)
+                      for(var i=0;i<$('.check-list:checked').length;++i)
+                          chooseList.push($('.check-list'+i).attr('id'))
+                  }
+                  else{
+                      $('.all-del').fadeOut()
+                      $('.check-list').prop('checked',false)
+                      chooseList=[]
+                  }
+              })
+              $('.check-list').click(function(){
+                  if($(this).prop('checked')==true)
+                    chooseList.push($(this).attr('id'))
+                  else{
+                    chooseList=[]
+                    for(var i=0;i<$('.check-list').length;++i){
+                        if($('.check-list'+i).prop('checked')==true)
+                            chooseList.push($('.check-list'+i).attr('id'))
+                    }
+                  }
+                  if($('.check-list:checked').length>1){
+                      $('.all-del').fadeIn()
+                      $('.choose-all').prop('checked',true)
+                  }else{
+                      $('.all-del').fadeOut()
+                      $('.choose-all').prop('checked',false)
+                  }
+              })
+              $('.all-del').click(function(){
+                  if(chooseList instanceof Array)
+                      chooseList=chooseList.join()
+                  $.ajax({
+                      url:'../api/api-car/delList.php',
+                      data:{chooseList},
+                      success:function(info){
+                          render()
+                          $.ajax({
+                            url:'../api/api-car/totalPrice.php',
+                            dataType:'json',
+                            success:function(info){
+                            $('.to-price').html(info)
+                          }
+                        })
+                      }
+                  })
+              })
+          }
+      })
+    }
+    function render(){
+        $.ajax({
+            url:'../api/api-car/getCount.php',
+            dataType:'json',
+            success:function(info){
+                var pageCount=info
+                $("#pagination").pagination(pageCount,    
+                {
+        　　　　　　 callback: PageCallback, 
+                    prev_text: "« 上一页",
+                    next_text: "下一页 »",
+                    items_per_page:pageSize,
+                    num_edge_entries: 2,    
+                    num_display_entries: 4,    
+                    current_page: 0,   
+    　　　      });
+            }
+        })
+    }
+    function PageCallback(index){
+        page=index
+        changePage(page,pageSize)
+    }
+    render()
+</script>
+</body>
+</html>
